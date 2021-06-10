@@ -1,0 +1,15 @@
+global:
+  scrape_interval:     15s # Set the Scrape Interval to every 15 seconds. The Default is every 1 minute
+  evaluation_interval: 15s # Set Evaluate rules every 15 seconds. The Default is every 1 minute
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - cadvisor:8080      
